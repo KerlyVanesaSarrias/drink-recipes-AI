@@ -34,7 +34,7 @@ const Header = () => {
     const handleSubmit = (e:  React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if(Object.values(searchFilters).includes('')){
-            console.log('Todos lo campos son requeridos');
+            console.log('All data is required ');
             return
         }
 
@@ -49,7 +49,7 @@ const Header = () => {
                         <img className='w-32' src="/logo.svg" alt="logotype" />
                     </div>
                     <nav className="flex gap-4">
-                        <NavLink className={({ isActive }) => isActive ? "text-orange-300 font-bold uppercase" : "text-white font-bold uppercase"} to="/">Inicio</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "text-orange-300 font-bold uppercase" : "text-white font-bold uppercase"} to="/">Home</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "text-orange-300 font-bold uppercase" : "text-white font-bold uppercase"} to="/favorites">Favorites</NavLink>
 
                     </nav>
@@ -61,18 +61,18 @@ const Header = () => {
                             onSubmit={handleSubmit}
                             >
                             <div className="space-y-1">
-                                <label className="block text-white  font-semibold text-lg" htmlFor="ingredient">Nombre o ingredientes</label>
+                                <label className="block text-white  font-semibold text-lg" htmlFor="ingredient">Name or ingredients</label>
                                 <input
                                     id="ingredient"
                                     type="text"
                                     name="ingredient"
-                                    placeholder="Nombre o ingrediente. Ej. Mojito, Vodka, Café..."
+                                    placeholder="Name or ingredient. Mojito, Vodka, Coffee..."
                                     className="p-3 w-full rounded-lg focus: outline-none bg-amber-50"
                                     onChange={handleChange}
                                     value={searchFilters.ingredient} />
                             </div>
                             <div className="space-y-1">
-                                <label className="block text-white  font-semibold text-lg" htmlFor="category">Categoría</label>
+                                <label className="block text-white  font-semibold text-lg" htmlFor="category">Category</label>
                                 <select
                                     id="category"
                                     name="category"
@@ -80,7 +80,7 @@ const Header = () => {
                                     onChange={handleChange}
                                     value={searchFilters.category}
                                 >
-                                    <option value="">--Seleccione--</option>
+                                    <option value="">--Select--</option>
                                     {
                                         categories.drinks.map(
                                             (category) => (
@@ -90,7 +90,7 @@ const Header = () => {
                                     }
                                 </select>
                             </div>
-                            <input type="submit" value="Buscar Recetas" className="cursor-pointer  bg-amber-700 hover:bg-amber-800 text-white w-full font-bold p-2 rounded-lg" />
+                            <input type="submit" value="Search Recipes" className="cursor-pointer  bg-amber-700 hover:bg-amber-800 text-white w-full font-bold p-2 rounded-lg" />
                         </form>
                     )
                 }

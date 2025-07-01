@@ -24,10 +24,10 @@ const DrinkCard = ({ drink }: DrinkCardProps) => {
                     <h1 className="text-2xl truncate font-black">{drink.strDrink}</h1>
                     <button
                     type="button"
-                    className="bg-amber-700 hover:bg-amber-800 mt-5 w-full p-3 font-bold text-white text-lg"
+                    className="bg-amber-700 hover:bg-amber-800 mt-5 w-full p-3 font-bold text-white text-lg rounded-xl"
                     onClick={() => selectRecipe(drink.idDrink)}
                     >
-                        Ver receta
+                        See recipe
                     </button>
             </div>
           
