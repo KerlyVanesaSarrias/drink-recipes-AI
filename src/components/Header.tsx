@@ -12,14 +12,17 @@ const Header = () => {
     )
 
     const { pathname } = useLocation()
-
     const isHome = useMemo(() => pathname === '/', [pathname])
+
     const fetchCategories = useAppStore((state) => state.fetchCategories)
+    const categories = useAppStore((state) => state.categories)
+     const SearchRecipes = useAppStore((state) => state.searchRecipes)
+   
     useEffect(() => {
         fetchCategories()
     }, [])
 
-    const categories = useAppStore((state) => state.categories)
+    
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
         setSearchFilters({
@@ -34,6 +37,8 @@ const Header = () => {
             console.log('Todos lo campos son requeridos');
             return
         }
+
+        SearchRecipes(searchFilters)
     }
 
     return (
