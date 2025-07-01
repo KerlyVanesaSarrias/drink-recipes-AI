@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+.bg-hero {
+  @apply bg-cover bg-center min-h-screen;
+  background-image: url('/bg.jpg'); /* Ajusta la ruta según tu estructura */
+}
